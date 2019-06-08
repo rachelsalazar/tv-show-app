@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { TvService } from '../tv/tv.service';
 import { debounceTime } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-tv-show-search',
@@ -9,6 +10,8 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./tv-show-search.component.css']
 })
 export class TvShowSearchComponent implements OnInit {
+
+  @Output() searchEvent = new EventEmitter<string>();
   search = new FormControl('', [Validators.minLength(3)])
 
   constructor(private tvService: TvService) { }
@@ -18,10 +21,8 @@ export class TvShowSearchComponent implements OnInit {
     .pipe(debounceTime(1000))
     .subscribe((searchValue : string) => {
       if (!this.search.invalid){
-        if (searchValue) {
-          const userInput = searchValue.split(',').map(s => s.trim());
-          this.tvService.getTvShow(userInput [0]).subscribe(data => console.log (data))
-        }
+        this.searchEvent.emit(searchValue);
+    
       }
     })
   }

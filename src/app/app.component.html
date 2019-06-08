@@ -6,10 +6,10 @@
 <router-outlet></router-outlet>
 <div>Your favorite TV shows now!</div>
 <div>
-  <app-tv-show-search></app-tv-show-search>
+  <app-tv-show-search (searchEvent)="doSearch($event)"></app-tv-show-search>
 </div>
 <mat-card>
 <h2>Trending Shows</h2>
-<app-tv-show></app-tv-show>
+<app-tv-show [tvShow]="tvShow"></app-tv-show>
 </mat-card>
 </div>
