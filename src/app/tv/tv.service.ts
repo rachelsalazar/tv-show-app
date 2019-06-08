@@ -25,8 +25,10 @@ export class TvService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTvShow(userShow: string) {
-    return this.httpClient.get<ITvShowData>(`${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${userShow}&appid=${environment.appId}`).pipe(map(data => this.transformToITvShow(data)))
+  getTvShow(search: string | number) {
+
+
+    return this.httpClient.get<ITvShowData>(`${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}&appid=${environment.appId}`).pipe(map(data => this.transformToITvShow(data)))
   }
   private transformToITvShow(data: ITvShowData) : ITvShow {
     return {
