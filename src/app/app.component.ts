@@ -12,9 +12,7 @@ export class AppComponent {
 
   tvShow: ITvShow
 
-  constructor(private tvService: TvService) {
-
-  }
+  constructor(private tvService: TvService) {}
 
 doSearch(searchValue){
   if (searchValue) {
