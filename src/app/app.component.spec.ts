@@ -5,12 +5,14 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, 
 import { TvShowSearchComponent } from './tv-show-search/tv-show-search.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { TvService } from './tv/tv.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        HttpClientTestingModule,
         RouterTestingModule,
         MatFormFieldModule,
         MatInputModule,
@@ -26,6 +28,7 @@ describe('AppComponent', () => {
         TvShowSearchComponent,
         TvShowComponent
       ],
+      providers: [TvService],
     }).compileComponents();
   }));
 
