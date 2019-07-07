@@ -7,11 +7,14 @@ import { TvShowComponent } from './tv-show/tv-show.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TvService } from './tv/tv.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         HttpClientTestingModule,
         RouterTestingModule,
         MatFormFieldModule,
@@ -44,10 +47,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('tv-show-app');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a h2 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to tv-show-app!');
+    expect(compiled.querySelector('h2').textContent).toContain('Trending Shows');
   });
 });
