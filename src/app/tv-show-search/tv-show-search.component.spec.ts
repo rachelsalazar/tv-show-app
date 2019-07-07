@@ -4,6 +4,10 @@ import { TvShowSearchComponent } from './tv-show-search.component';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule} from '@angular/material';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 describe('TvShowSearchComponent', () => {
   let component: TvShowSearchComponent;
@@ -18,6 +22,10 @@ describe('TvShowSearchComponent', () => {
         MatToolbarModule,
         MatIconModule,
         MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+        BrowserAnimationsModule
       ],
       declarations: [ TvShowSearchComponent ]
     })
