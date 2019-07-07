@@ -1,7 +1,7 @@
 <form>
   <mat-form-field>
     <mat-icon matPrefix>search</mat-icon>
-    <input matInput placeholder="Enter show" aria-label="show"[formControl]="search" />
+    <input matInput placeholder="Enter show" aria-label="show" [formControl]="search" />
     <mat-hint> Specify show name like 'Survivor'</mat-hint>
     <mat-error *ngIf="search.invalid">
       {{getErrorMessage()}}

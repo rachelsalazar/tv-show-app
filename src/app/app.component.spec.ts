@@ -6,7 +6,7 @@ import { TvShowSearchComponent } from './tv-show-search/tv-show-search.component
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TvService } from './tv/tv.service';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
