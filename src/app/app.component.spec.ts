@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TvService } from './tv/tv.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TvServiceFake } from './tv/tv.service.fake';
 
 
 describe('AppComponent', () => {
@@ -31,7 +32,7 @@ describe('AppComponent', () => {
         TvShowSearchComponent,
         TvShowComponent
       ],
-      providers: [TvService],
+      providers: [{provide: TvService, useClass: TvServiceFake}],
     }).compileComponents();
   }));
 
