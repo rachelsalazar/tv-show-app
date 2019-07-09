@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ITvShow } from '../itv-show';
 import {map} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 interface ITvShowData {
   name: string,
@@ -18,10 +19,14 @@ interface ITvShowData {
   }
 }
 
+export interface ITvService {
+  getTvShow(search: string | number): Observable<ITvShow>
+}
+
 @Injectable({
   providedIn: 'root'
 })
-export class TvService {
+export class TvService implements ITvService {
 
   constructor(private httpClient: HttpClient) { }
 
